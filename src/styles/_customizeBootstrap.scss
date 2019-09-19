@@ -1,0 +1,34 @@
+$body-bg: darken(#3c4f65, 10%);
+$additional-color: #e6f5ff;
+$secondary: mix(#33313b, $additional-color, $weight: 25%);
+$body-color: mix($body-bg, $additional-color, $weight: 55%);
+
+$primary: darken(#834c69, 10%);
+$light: lighten($additional-color, 15%);
+
+$enable-responsive-font-sizes: true;
+$enable-shadows: true;
+
+// $box-shadow: 0 0.5rem 1rem rgba($secondary, 0.15);
+// $box-shadow-no-color: 0.3rem 0.6rem 0.4rem;
+// $box-shadow: $box-shadow-no-color rgba($secondary, 0.2);
+
+// $text-shadow-no-color: 0.2rem 0.4rem 0.22rem;
+// $text-shadow: $text-shadow-no-color rgba($secondary, 0.15);
+
+$font-family-base: 'Montserrat', sans-serif;
+
+$sizes: ();
+
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    85: 85%,
+    95: 95%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);

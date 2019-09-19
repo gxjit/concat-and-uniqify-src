@@ -1,0 +1,115 @@
+{
+  "name": "concat-and-uniqify",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-js": "rollup -c --environment REACT:True",
+    "watch-js": "chokidar \"./src/scripts/**/*.js*\" -c \"npm run build-js\"",
+    "prod-js": "rollup -c --environment PROD:True,REACT:True",
+    "lint-js": "eslint --fix \"./src/scripts/**/*.js*\"",
+    "fmt-js": "prettier --write \"./src/scripts/**/*.js*\"",
+    "build-sass": "sass --style=compressed --no-source-map \"./src/styles/\":\"./build/assets/styles/\"",
+    "watch-sass": "chokidar \"./src/styles/*.s*ss\" -c \"npm run build-sass\"",
+    "prod-sass": "npm run build-sass && postcss --env \"production\" --replace \"./build/assets/styles/*.css\"",
+    "fmt-sass": "prettier --write \"./src/styles/\"",
+    "build": "concurrently --raw \"npm:build-*\"",
+    "watch": "concurrently --raw \"npm:watch-*\"",
+    "prod": "concurrently --raw \"npm:prod-*\"",
+    "cp-markup": "cp ./src/markup/*.htm* ./build/",
+    "cp-vendor": "cp ./src/vendor/*.* ./build/assets/vendor/",
+    "cp-data": "cp ./src/data/*.* ./build/assets/data/",
+    "export-build": "cp -r ./build/** ../concat-and-uniqify-export/.",
+    "mkdirs-all": "mkdir -p ./src/vendor/ ./src/scripts/ ./src/styles/ ./src/markup/ ./build/assets/vendor/ ./build/assets/scripts/ ./build/assets/styles/"
+  },
+  "keywords": [],
+  "author": "Gurjit Singh",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ],
+      "@babel/preset-react"
+    ],
+    "ignore": [
+      "**/.git/**",
+      "**/node_modules/**",
+      "**/.npm/**",
+      "**/*.min.js",
+      "dist/**",
+      "build/**",
+      "**/vendor/**"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-singh-react/with-prettier"
+    ]
+  },
+  "eslintIgnore": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.npm/**",
+    "**/*.min.js",
+    "dist/**",
+    "build/**",
+    "**/vendor/**"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "semi": false,
+    "endOfLine": "lf"
+  },
+  "browserslist": {
+    "production": [
+      "defaults and not < 0.1%",
+      "> 0.2% and not dead"
+    ],
+    "development": [
+      "last 1 chrome versions",
+      "last 1 firefox versions",
+      "last 1 safari versions",
+      "current node"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "autoprefixer": "^9.6.1",
+    "chokidar-cli": "^2.0.0",
+    "concurrently": "^4.1.2",
+    "core-js": "^3.2.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.4.0",
+    "eslint-config-singh": "https://github.com/gxjit/eslint-config-singh/tarball/master",
+    "eslint-config-singh-react": "https://github.com/gxjit/eslint-config-singh-react/tarball/master",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^6.1.3",
+    "prettier": "^1.18.2",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "sass": "^1.22.12"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "bootstrap": "^4.3.1",
+    "ramda": "^0.26.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  }
+}
