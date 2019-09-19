@@ -1,4 +1,13 @@
-$text-shadow-cust: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
+// $text-shadow-cust: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
+// $bg-gradient: linear-gradient(
+//   to bottom,
+//   $primary 0%,
+//   mix($primary, $body-color, $weight: 42%) 99%
+// );
+
+// body {
+//   background: $bg-gradient;
+// }
 
 .text-shadow {
   text-shadow: $text-shadow-cust;
