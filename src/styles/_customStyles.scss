@@ -1,3 +1,5 @@
+$text-shadow-cust: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
+
 .text-shadow {
-  text-shadow: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
+  text-shadow: $text-shadow-cust;
 }

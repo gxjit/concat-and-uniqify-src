@@ -1,0 +1,21 @@
+@import '../../node_modules/github-fork-ribbon-css/gh-fork-ribbon';
+
+.github-fork-ribbon:before {
+  /* Set the base colour */
+  background-color: $primary;
+
+  /* drop shadow */
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+.github-fork-ribbon:after {
+  /* Set the text properties */
+  color: $light;
+  font: 700 1em $font-family-base;
+  text-shadow: $text-shadow-cust;
+  /* "stitching" effect */
+  border-color: $light;
+  border-color: rgba($light, 0.7);
+}
