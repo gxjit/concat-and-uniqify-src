@@ -4,6 +4,11 @@ $text-shadow-cust: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
   text-shadow: $text-shadow-cust;
 }
 
+.vh-100-fix {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 // $bg-gradient: linear-gradient(
 //   to bottom,
 //   $primary 0%,
