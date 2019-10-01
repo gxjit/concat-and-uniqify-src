@@ -9,6 +9,16 @@ $text-shadow-cust: 0.2rem 0.4rem 0.22rem rgba($primary, 0.15);
   height: calc(var(--vh, 1vh) * 100);
 }
 
+#responsive {
+  height: 85%;
+  @media (min-width: 576px) {
+    height: 55%;
+  }
+  @media (max-height: 576px) {
+    height: 85%;
+  }
+}
+
 // $bg-gradient: linear-gradient(
 //   to bottom,
 //   $primary 0%,

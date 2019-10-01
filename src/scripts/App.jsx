@@ -20,9 +20,9 @@ const App = () => {
       >
         Fork me on GitHub
       </a>
-      <div className='row vh-100-fix d-flex flex-column align-items-center justify-content-center'>
-        <div className='col-md-8 col-sm-10 col-12'>
-          <div className='card bg-primary rounded-lg h-85 shadow-lg'>
+      <div className='row vh-100-fix d-flex align-items-center justify-content-center'>
+        <div id='responsive' className='col-md-8 col-sm-10 col-12'>
+          <div className='card bg-primary rounded-lg shadow-lg h-100'>
             <div className='card-body d-flex flex-column'>
               <DropZone />
             </div>
